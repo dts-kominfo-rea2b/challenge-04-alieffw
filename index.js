@@ -10,37 +10,12 @@ const dates = [
 // TODO: Buatlah fungsi createDate
 function createDate (date)
 {
-  let varDate = null;
+  let varDate = date.sort();
+  
   for(let index = 0; index < date.length; index++)
   {
-    if(index == 0)
-    {     
-      varDate = Date.parse(date[0])/1000;
-    }
-    else if(index == 1)
-    {
-      varDate = Date.parse(date[1])/1000;
-    } 
-    else if(index == 2)
-    {
-      varDate = Date.parse(date[2])/1000;
-    } 
-    else if(index == 3)
-    {
-      varDate = Date.parse(date[3])/1000;
-    } 
-    else if(index == 4)
-    {
-      varDate = Date.parse(date[4])/1000;
-    } 
-    else
-    {
-      varDate += Date.parse(date[0])/1000 
-      +" - "+ Date.parse(date[1])/1000
-      +" - "+ Date.parse(date[2])/1000
-      +" - "+ Date.parse(date[3])/1000
-      +" - "+ Date.parse(date[4])/1000
-    }
+    varDate = Date.parse(date[0])/1000 +" - "+ Date.parse(date[1])/1000+" - "+ 
+    Date.parse(date[2])/1000+" - "+ Date.parse(date[3])/1000+" - "+ Date.parse(date[4])/1000;
   }
   return varDate;
 }
