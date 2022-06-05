@@ -8,22 +8,29 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-function createDate (date)
-{
-  let varDate = date.sort();
+const createDate = (date, indexArray) => {
+  let arrDate = [];
+    for (let index = 0; index < date.length; index++) {
+      arrDate.push(Date.parse(date[index]) / 1000);
+    }
   
-  for(let index = 0; index < date.length; index++)
+  if(indexArray === undefined)
   {
-    varDate = Date.parse(date[0])/1000 +" - "+ Date.parse(date[1])/1000+" - "+ 
-    Date.parse(date[2])/1000+" - "+ Date.parse(date[3])/1000+" - "+ Date.parse(date[4])/1000;
+    arrDate = arrDate.sort().join("-");
+    return arrDate.toString();
+  } 
+  else
+  {
+    arrDate = arrDate[indexArray];
+    return arrDate.toString();
   }
-  return varDate;
-}
+  
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
   // IIFE
-  
+
   // '1546387200-1580662800-1614841200-1617573600-1651802400' (dalam string)
   console.log(createDate?.(dates));
 
